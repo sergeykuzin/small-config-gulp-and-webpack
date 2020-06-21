@@ -20,9 +20,7 @@ gulp.task('buildHtml', () => gulp
 gulp.task('buildCss', () => gulp
   .src('./src/sass/pages/*.scss')
   .pipe(sass())
-  .pipe(autoprefixer({
-    cascade: false,
-  }))
+  .pipe(autoprefixer({ cascade: false, }))
   .pipe(csso({ restructure: true }))
   .pipe(gulp.dest(`${dist}css/`))
   .pipe(browsersync.stream()));
